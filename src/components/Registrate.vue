@@ -13,7 +13,7 @@
           <el-input type="password" v-model="ruleForm.repass" auto-complete="off"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button class="btn-margin" type="primary" @click="submitForm('ruleForm')">登陆</el-button>
+          <el-button class="btn-margin" type="primary" @click="submitForm('ruleForm')">注册</el-button>
           <el-button @click="resetForm('ruleForm')">重置</el-button>
         </el-form-item>
       </el-form>
@@ -109,5 +109,17 @@
 </script>
 
 <style scoped>
-
+  .sign-bg {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  h3 {
+    text-align: center;
+    font-weight: normal;
+  }
+  .el-input {
+    width: 300px;
+  }
+  .btn-margin {
+    margin: 0 30px 0 50px;
+  }
 </style>
