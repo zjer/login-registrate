@@ -31,11 +31,12 @@
         },
         rules: {
           name: [
-            { required: true, message: '请输入你的用户名', trigger: 'blur' },
-            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+            { required: true, message: '请输入用户名', trigger: 'blur' },
+            { min: 3, max: 13, message: '长度在 3 到 13 个字符', trigger: 'blur' }
           ],
           pass: [
-            { required: true, message: '请输入你的密码', trigger: 'blur' }
+            { required: true, message: '请输入你的密码', trigger: 'blur' },
+            { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' }
           ]
         }
       }
@@ -47,7 +48,7 @@
             let _this = this
             this.$ajax.post(this.rootUrl + _this.url, _this.ruleForm)
               .then((response) => {
-               console.log(response.data.num)
+                console.log(response.data.num)
                 if (response.data.num === 1) {
                   this.$message.success('登陆成功！')
                   //  跳转到登录成功页
