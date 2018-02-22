@@ -73,9 +73,13 @@
             { validator: validateAccount, trigger: 'blur' }
           ],
           pass: [
+            { required: true, message: '请输入你的密码', trigger: 'blur' },
+            { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' },
             { validator: validatePass, trigger: 'blur' }
           ],
           repass: [
+            { required: true, message: '请输入你的密码', trigger: 'blur' },
+            { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' },
             { validator: validatePass2, trigger: 'blur' }
           ]
         }
