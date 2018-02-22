@@ -2,7 +2,7 @@
   <el-row>
     <el-col :span="8" :offset="8" class="sign-bg">
       <h3>用户注册</h3>
-      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+      <el-form :model="ruleForm" status-icon :rules="rules" ref="ruleForm" label-width="80px" class="demo-ruleForm">
         <el-form-item label="用户名" prop="name">
           <el-input type="text" v-model="ruleForm.name" auto-complete="off"></el-input>
         </el-form-item>
@@ -109,6 +109,10 @@
 </script>
 
 <style scoped>
+  .el-row {
+    width: 1200px;
+    margin: 0 auto;
+  }
   .sign-bg {
     background-color: rgba(255, 255, 255, 0.5);
   }
