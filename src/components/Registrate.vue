@@ -38,11 +38,11 @@
           })
       }
       let validatePass = (rule, value, callback) => {
-        let regExp = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/
+        let regExp = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{5,10}$/
         if (value === '') {
           callback(new Error('请输入密码'))
         } else if (regExp.test(value) === false) {
-          callback(new Error('8-16字母和数字组成，不能是纯数字或纯英文'))
+          callback(new Error('5-10字母和数字组成，不能是纯数字或纯英文'))
         } else {
           if (this.ruleForm.repass !== '') {
             this.$refs.ruleForm.validateField('repass')
@@ -60,7 +60,7 @@
         }
       }
       return {
-        url: '/user/insert.action',
+        url: '/user/insert.do',
         ruleForm: {
           name: '',
           pass: '',
@@ -69,17 +69,17 @@
         rules: {
           name: [
             { required: true, message: '请输入用户名', trigger: 'blur' },
-            { min: 3, max: 13, message: '长度在 3 到 13 个字符', trigger: 'blur' },
+            { min: 3, max: 10, message: '长度在 3 到 10 个字符', trigger: 'blur' },
             { validator: validateAccount, trigger: 'blur' }
           ],
           pass: [
             { required: true, message: '请输入你的密码', trigger: 'blur' },
-            { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' },
+            { min: 5, max: 10, message: '长度在 5 到 10 个字符', trigger: 'blur' },
             { validator: validatePass, trigger: 'blur' }
           ],
           repass: [
             { required: true, message: '请输入你的密码', trigger: 'blur' },
-            { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' },
+            { min: 5, max: 10, message: '长度在 5 到 10 个字符', trigger: 'blur' },
             { validator: validatePass2, trigger: 'blur' }
           ]
         }
@@ -115,14 +115,18 @@
 <style scoped>
   .el-row {
     width: 1200px;
-    margin: 0 auto;
+    margin: 20% auto;
   }
   .sign-bg {
     background-color: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
   h3 {
     text-align: center;
     font-weight: normal;
+    color: #ffffff;
   }
   .el-input {
     width: 300px;

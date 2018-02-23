@@ -14,6 +14,7 @@ export default {
   body {
     width: 100%;
     height: 100%;
+    background: url("assets/bg.jpg") top center no-repeat;
     margin: 0;
   }
   #app {
