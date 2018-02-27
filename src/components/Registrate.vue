@@ -115,7 +115,7 @@
 <style scoped>
   .el-row {
     width: 1200px;
-    margin: 20% auto;
+    margin: 15% auto 0;
   }
   .sign-bg {
     background-color: rgba(255, 255, 255, 0.5);
